@@ -84,7 +84,7 @@ LoadRecord(FlarmRecord &record, const char *line)
 
   // Terminate callsign string on first whitespace
   int maxSize = sizeof(record.callsign) / sizeof(TCHAR);
-  for (int i = 0; record.callsign[i] != 0 && i < maxSize; i++)
+  for (int i = 0; i < maxSize && record.callsign[i] != 0; i++)
     if (IsWhitespaceOrNull(record.callsign[i]))
       record.callsign[i] = 0;
 
